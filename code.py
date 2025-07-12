@@ -3,9 +3,10 @@ def menu():
     ======== MENU ========
     [d]\tDepositar
     [s]\tSacar
-    [nc] Extrato
-    [lc] Nova Conta
-    [nu] Listar contas
+    [e]\tExtrato
+    [nc] Nova conta
+    [lc] Listar contas
+    [nu] Novo usuário
     [q]\tSair
     """
     return input(menu)
@@ -35,7 +36,7 @@ def sacar(*, saldo, valor, extrato, limite, numero_saques, limite_saques):
         print('\n@@@ Operação falhou! Número máximo de saques exceido @@@')
 
     elif valor > 0:
-        salo -= valor
+        saldo -= valor
         extrato += f'Saque\t\tR$ {valor:.2f}\n'
         numero_saques += 1
         print('\n=== Operação realizada com êxito! ===')
@@ -123,8 +124,6 @@ def main():
         elif opcao == 'e':
             exibir_extrato(saldo, extrato=extrato)
 
-        elif opcao == 'nu':
-            criar_usuario(usuarios)    
 
         elif opcao == 'nc':
             numero_conta = len(contas) + 1
@@ -133,8 +132,14 @@ def main():
             if conta:
                 contas.append(conta)
 
+
         elif opcao == 'lc':
             listar_contas(contas)
+
+        elif opcao == 'nu':
+            criar_usuario(usuarios)    
+
+
 
         elif opcao == 'q':
             break        
