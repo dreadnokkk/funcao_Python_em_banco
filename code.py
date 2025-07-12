@@ -1,12 +1,11 @@
-#%%
 def menu():
     menu = """\n
     ======== MENU ========
     [d]\tDepositar
     [s]\tSacar
-    [nc]\tExtrato
-    [lc]\tNova Conta
-    [nu]\tListar contas
+    [nc] Extrato
+    [lc] Nova Conta
+    [nu] Listar contas
     [q]\tSair
     """
     return input(menu)
@@ -141,4 +140,3 @@ def main():
             break        
         
 main()
-# %%
